@@ -1,0 +1,4 @@
+[submodule "deps/skill-nodeset"]
+	path = deps/skill-nodeset
+	url = https://github.com/opcua-skills/skill-nodeset.git
+	branch = master-examples
