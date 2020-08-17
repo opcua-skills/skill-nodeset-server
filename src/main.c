@@ -12,12 +12,12 @@
 #include <open62541/server_config_default.h>
 
 /* Files created by CMake from the nodeset */
-#include "skill_nodeset_nodeids.h"
-#include "skill_nodeset_example_nodeids.h"
+#include "skills_nodeids.h"
+#include "skills_example_nodeids.h"
 #include "di_nodeids.h"
 #include "my_company_nodeids.h"
-#include "namespace_skill_nodeset_generated.h"
-#include "namespace_skill_nodeset_example_generated.h"
+#include "namespace_skills_generated.h"
+#include "namespace_skills_example_generated.h"
 #include "namespace_di_generated.h"
 #include "namespace_my_company_generated.h"
 
@@ -41,20 +41,16 @@ int main(
 
     UA_StatusCode retval;
     /* create nodes from nodeset */
-    if(namespace_skill_nodeset_generated(server) != UA_STATUSCODE_GOOD) {
+    if(namespace_skills_generated(server) != UA_STATUSCODE_GOOD) {
         UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the skill nodeset. "
-                                                           "Check previous output for any error.");
-        retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
-    } else if(namespace_skill_nodeset_example_generated(server) != UA_STATUSCODE_GOOD) {
-        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the skill example nodeset. "
                                                            "Check previous output for any error.");
         retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
     }  else if(namespace_di_generated(server) != UA_STATUSCODE_GOOD) {
         UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the DI nodeset. "
                                                            "Check previous output for any error.");
         retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
-    }  else if(namespace_my_company_generated(server) != UA_STATUSCODE_GOOD) {
-        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the MYCompany nodeset. "
+    } else if(namespace_skills_example_generated(server) != UA_STATUSCODE_GOOD) {
+        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the skill example nodeset. "
                                                            "Check previous output for any error.");
         retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
     } else {
