@@ -20,9 +20,8 @@ jobs:
       - name: Install dependencies for open62541
         run: sudo apt-get install -y --no-install-recommends libmbedtls-dev python-netifaces
 
-      # Install with correct hasInterface: https://github.com/open62541/open62541/pull/3813
       - name: Install open62541
-        run: ./tools/install_open62541.sh 9b1fedc64737f4fdc761c80722dbb4b66cc1a3cb ${{runner.workspace}}/install
+        run: ./tools/install_open62541.sh 243d93ada7c588379cc027e3c24e1ca77a808189 ${{runner.workspace}}/install
 
       - name: Create Build Environment
         run: cmake -E make_directory ${{runner.workspace}}/build
