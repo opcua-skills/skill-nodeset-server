@@ -15,11 +15,9 @@
 #include "skills_nodeids.h"
 #include "skills_example_nodeids.h"
 #include "di_nodeids.h"
-#include "my_company_nodeids.h"
 #include "namespace_skills_generated.h"
 #include "namespace_skills_example_generated.h"
 #include "namespace_di_generated.h"
-#include "namespace_my_company_generated.h"
 
 static volatile UA_Boolean running = true;
 static void stopHandler(int sig) {
