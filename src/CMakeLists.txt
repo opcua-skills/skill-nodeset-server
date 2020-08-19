@@ -23,6 +23,7 @@ set(GENERATE_OUTPUT_DIR "${CMAKE_BINARY_DIR}/src_generated/")
 
 file(MAKE_DIRECTORY "${GENERATE_OUTPUT_DIR}")
 include_directories("${GENERATE_OUTPUT_DIR}")
+include_directories("${CMAKE_CURRENT_LIST_DIR}")
 
 ua_generate_nodeset_and_datatypes(
         NAME "skills"
@@ -67,7 +68,14 @@ add_executable(nodeset-example-server
                ${UA_TYPES_SKILLS_EXAMPLE_SOURCES}
                ${UA_NODESET_DI_SOURCES}
                ${UA_TYPES_DI_SOURCES}
-               main.c
+               main.cpp
+               base/helper.hpp
+               base/FiniteStateMachine.hpp
+               base/ProgramState.hpp
+               base/ProgramTransition.hpp
+               base/Program.hpp
+               base/SkillBase.hpp
+               skills/GraspSkill.hpp
                )
 
 add_dependencies(nodeset-example-server

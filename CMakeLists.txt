@@ -20,6 +20,10 @@ endif()
 
 find_package(open62541 1.1 REQUIRED COMPONENTS FullNamespace Events)
 
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 #enable_testing()
 
 # -------------
